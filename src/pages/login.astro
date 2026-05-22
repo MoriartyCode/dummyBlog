@@ -1,0 +1,103 @@
+---
+// NON-SECURE PLACEHOLDER: password is checked entirely in the browser and
+// can be bypassed via DevTools. Replace with real server-side auth before
+// any production or public deployment.
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login — Lumen Studio</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f6f8;
+        font-family: system-ui, sans-serif;
+        color: #1a1a2e;
+      }
+      .card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+        padding: 2.5rem 2rem;
+        width: 100%;
+        max-width: 360px;
+      }
+      h1 { margin: 0 0 1.5rem; font-size: 1.4rem; }
+      label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+      }
+      input[type="password"] {
+        width: 100%;
+        padding: 0.6em 0.8em;
+        border: 1px solid #d0d5dd;
+        border-radius: 4px;
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+      }
+      input[type="password"]:focus {
+        outline: 2px solid #2337ff;
+        outline-offset: 1px;
+        border-color: transparent;
+      }
+      button {
+        width: 100%;
+        padding: 0.7em;
+        background: #2337ff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      button:hover { background: #000d8a; }
+      #error {
+        font-size: 0.85rem;
+        color: #c0392b;
+        min-height: 1.2em;
+        margin: 0 0 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Admin Login</h1>
+      <form id="login-form">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          autocomplete="current-password"
+          autofocus
+        />
+        <p id="error" role="alert" aria-live="polite"></p>
+        <button type="submit">Sign in</button>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById("login-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const pw = document.getElementById("password").value;
+        if (pw === "12345") {
+          sessionStorage.setItem("authed", "true");
+          window.location.replace("/admin");
+        } else {
+          document.getElementById("error").textContent = "Incorrect password.";
+        }
+      });
+    </script>
+  </body>
+</html>
