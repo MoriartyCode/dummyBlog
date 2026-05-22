@@ -1,0 +1,206 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Services — Lumen Studio" description="UI/UX design, web development, and branding services from Lumen Studio." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="page-header">
+				<h1>Services</h1>
+				<p>We offer end-to-end design and development services, from initial discovery through to launch and beyond.</p>
+			</section>
+
+			<section class="service" id="ux">
+				<div class="service-inner">
+					<div class="service-label">01</div>
+					<div class="service-body">
+						<h2>UI/UX Design</h2>
+						<p>Great products start with understanding people. We begin every engagement with user research and discovery — interviews, heuristic audits, competitive analysis — before a single pixel gets placed.</p>
+						<p>From that foundation we build: information architecture, low-fidelity wireframes, interactive prototypes, and polished high-fidelity UI ready for handoff to development.</p>
+						<ul>
+							<li>User research & journey mapping</li>
+							<li>Information architecture</li>
+							<li>Wireframing & prototyping</li>
+							<li>High-fidelity UI design</li>
+							<li>Usability testing</li>
+							<li>Design systems</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="service alt" id="dev">
+				<div class="service-inner">
+					<div class="service-label">02</div>
+					<div class="service-body">
+						<h2>Web Development</h2>
+						<p>We build fast, accessible, standards-compliant web applications. Whether you need a marketing site, a complex web app, or an API-driven platform, we choose the right tools for the job — not the trendiest ones.</p>
+						<p>We work with React, Astro, Next.js, and plain HTML/CSS/JS. We care about performance, accessibility (WCAG AA), and code that future teams can actually maintain.</p>
+						<ul>
+							<li>Front-end development</li>
+							<li>Full-stack web applications</li>
+							<li>CMS integration</li>
+							<li>Performance optimization</li>
+							<li>Accessibility audits & remediation</li>
+							<li>Ongoing maintenance & support</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="service" id="brand">
+				<div class="service-inner">
+					<div class="service-label">03</div>
+					<div class="service-body">
+						<h2>Branding</h2>
+						<p>Your brand is the first thing people feel before they read a word. We develop visual identities that are distinctive, coherent, and built to last — from early-stage startups finding their voice to established companies looking to evolve.</p>
+						<p>Every brand project ends with a comprehensive style guide and all assets in formats you'll actually use.</p>
+						<ul>
+							<li>Brand strategy & positioning</li>
+							<li>Logo design</li>
+							<li>Color & typography systems</li>
+							<li>Tone of voice guidelines</li>
+							<li>Brand collateral</li>
+							<li>Brand guidelines documentation</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="cta">
+				<h2>Ready to get started?</h2>
+				<p>Reach out and tell us about your project.</p>
+				<a href="/contact" class="btn">Contact us</a>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 100%;
+		max-width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	.page-header {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 5em 2em 3em;
+	}
+
+	.page-header h1 {
+		margin-bottom: 0.5rem;
+	}
+
+	.page-header p {
+		color: rgb(var(--gray));
+		font-size: 1.1rem;
+	}
+
+	.service {
+		padding: 4em 2em;
+	}
+
+	.service.alt {
+		background: rgb(var(--gray-light));
+	}
+
+	.service-inner {
+		max-width: 800px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 80px 1fr;
+		gap: 2rem;
+	}
+
+	.service-label {
+		font-size: 3rem;
+		font-weight: 700;
+		color: rgb(var(--gray-light));
+		line-height: 1;
+		padding-top: 0.2rem;
+	}
+
+	.service.alt .service-label {
+		color: #fff;
+	}
+
+	.service-body h2 {
+		margin-bottom: 1rem;
+	}
+
+	.service-body p {
+		color: rgb(var(--gray));
+		margin-bottom: 1rem;
+	}
+
+	.service-body ul {
+		margin: 1.5rem 0 0;
+		padding-left: 1.25rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.4rem 1rem;
+	}
+
+	.service-body li {
+		color: rgb(var(--gray));
+		font-size: 0.95rem;
+	}
+
+	.cta {
+		padding: 5em 2em;
+		background: rgb(var(--gray-dark));
+		color: #fff;
+		text-align: center;
+	}
+
+	.cta h2 {
+		color: #fff;
+		margin-bottom: 0.75rem;
+	}
+
+	.cta p {
+		color: rgb(var(--gray-light));
+		margin-bottom: 2rem;
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 0.75em 2em;
+		background: var(--accent);
+		color: #fff;
+		text-decoration: none;
+		border-radius: 4px;
+		font-size: 1rem;
+		font-weight: 700;
+	}
+
+	.btn:hover {
+		background: var(--accent-dark);
+		color: #fff;
+	}
+
+	@media (max-width: 720px) {
+		.service-inner {
+			grid-template-columns: 1fr;
+		}
+
+		.service-label {
+			font-size: 2rem;
+		}
+
+		.service-body ul {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

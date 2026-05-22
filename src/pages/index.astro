@@ -13,37 +13,190 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero">
+				<h1>We design digital products that people love.</h1>
+				<p>Lumen Studio is a full-service design agency helping startups and established brands craft meaningful digital experiences — from strategy to pixel-perfect execution.</p>
+				<a href="/contact" class="btn">Start a project</a>
+			</section>
+
+			<section class="services">
+				<h2>What we do</h2>
+				<div class="cards">
+					<div class="card">
+						<h3>UI/UX Design</h3>
+						<p>We create intuitive, beautiful interfaces grounded in user research and interaction design principles. From wireframes to high-fidelity prototypes, we sweat the details so your users don't have to.</p>
+						<a href="/services#ux">Learn more &rarr;</a>
+					</div>
+					<div class="card">
+						<h3>Web Development</h3>
+						<p>Fast, accessible, and maintainable — we build production-ready web experiences using modern tooling. We work closely with your team or handle the full stack ourselves.</p>
+						<a href="/services#dev">Learn more &rarr;</a>
+					</div>
+					<div class="card">
+						<h3>Branding</h3>
+						<p>A strong brand is more than a logo. We develop cohesive visual identities — typography, color, tone of voice — that scale from business cards to billboards.</p>
+						<a href="/services#brand">Learn more &rarr;</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="about-teaser">
+				<div class="about-teaser-inner">
+					<h2>A studio built on craft.</h2>
+					<p>Founded in 2018, Lumen Studio has partnered with over 60 clients across fintech, healthcare, e-commerce, and education. We're a small team with big ambitions — and we believe that the best digital products come from genuine collaboration between designers, developers, and the people who use them.</p>
+					<a href="/about">Our story &rarr;</a>
+				</div>
+			</section>
+
+			<section class="cta">
+				<h2>Ready to build something great?</h2>
+				<p>Tell us about your project. We'll get back to you within one business day.</p>
+				<a href="/contact" class="btn btn-outline">Get in touch</a>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	main {
+		width: 100%;
+		max-width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	section {
+		padding: 5em 2em;
+	}
+
+	.hero {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 6em 2em 5em;
+		text-align: center;
+	}
+
+	.hero h1 {
+		font-size: 3rem;
+		line-height: 1.15;
+		margin-bottom: 1rem;
+	}
+
+	.hero p {
+		font-size: 1.15rem;
+		color: rgb(var(--gray));
+		max-width: 600px;
+		margin: 0 auto 2rem;
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 0.75em 2em;
+		background: var(--accent);
+		color: #fff;
+		text-decoration: none;
+		border-radius: 4px;
+		font-size: 1rem;
+		font-weight: 700;
+		transition: background 0.2s;
+	}
+
+	.btn:hover {
+		background: var(--accent-dark);
+		color: #fff;
+	}
+
+	.btn-outline {
+		background: transparent;
+		color: var(--accent);
+		border: 2px solid var(--accent);
+	}
+
+	.btn-outline:hover {
+		background: var(--accent);
+		color: #fff;
+	}
+
+	.services {
+		background: rgb(var(--gray-light));
+		text-align: center;
+	}
+
+	.services h2 {
+		margin-bottom: 2rem;
+	}
+
+	.cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1.5rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.card {
+		background: #fff;
+		border-radius: 8px;
+		padding: 2rem;
+		text-align: left;
+		box-shadow: var(--box-shadow);
+	}
+
+	.card h3 {
+		margin-bottom: 0.75rem;
+	}
+
+	.card p {
+		color: rgb(var(--gray));
+		font-size: 0.95rem;
+		margin-bottom: 1rem;
+	}
+
+	.card a {
+		font-size: 0.95rem;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.about-teaser {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+
+	.about-teaser h2 {
+		margin-bottom: 1rem;
+	}
+
+	.about-teaser p {
+		color: rgb(var(--gray));
+		margin-bottom: 1.5rem;
+	}
+
+	.about-teaser a {
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.cta {
+		background: rgb(var(--gray-dark));
+		color: #fff;
+		text-align: center;
+	}
+
+	.cta h2 {
+		color: #fff;
+		margin-bottom: 0.75rem;
+	}
+
+	.cta p {
+		color: rgb(var(--gray-light));
+		margin-bottom: 2rem;
+	}
+
+	@media (max-width: 720px) {
+		.hero h1 {
+			font-size: 2.2rem;
+		}
+	}
+</style>
